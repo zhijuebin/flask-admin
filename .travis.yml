@@ -2,10 +2,6 @@ sudo: false
 language: python
 matrix:
   include:
-    - python: 2.6
-      env: TOX_ENV=py26-WTForms1
-    - python: 2.6
-      env: TOX_ENV=py26-WTForms2
     - python: 2.7
       env: TOX_ENV=py27-WTForms1
     - python: 2.7
@@ -33,6 +29,10 @@ matrix:
 
 addons:
   postgresql: "9.4"
+  apt:
+    packages:
+      - postgresql-9.4-postgis-2.4
+      - postgresql-9.4-postgis-2.4-scripts
 
 services:
   - postgresql
